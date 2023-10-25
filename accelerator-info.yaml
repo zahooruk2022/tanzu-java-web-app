@@ -1,0 +1,26 @@
+id: 99f0258d-5198-4247-96a0-10890c6bb41f
+timestamp: 2023-10-25T21:52:09Z
+username: zahooruk2022
+source: TAP-GUI
+accelerator:
+  name: tanzu-java-web-app
+  source:
+    image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:0310128e62ade8150fbfa9fd82e826d98d4311a17b97ba5cb2bdab1ffc25d7d9
+fragments:
+  - name: tap-workload
+    source:
+      image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+  - name: build-wrapper-maven
+    source:
+      image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: java-version
+    source:
+      image: europe-west2-docker.pkg.dev/za-tanzu/tap/tap-packages@sha256:fa976ccf1609cb69e74a0162f0f49581fd0d393003e2fbe5d54d12eae62b4ff9
+options:
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=zahooruk2022&repo=tanzu-java-web-app
+  includeBuildToolWrapper: true
+  javaVersion: 11
+  projectName: tanzu-java-web-app
+  repositoryPrefix: dev.local
+  updateBoot3: false
